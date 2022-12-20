@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   fill_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaronespinosa <aaronespinosa@student.42    +#+  +:+       +#+        */
+/*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:49:04 by aaronespino       #+#    #+#             */
-/*   Updated: 2022/11/26 20:56:34 by aaronespino      ###   ########.fr       */
+/*   Updated: 2022/12/20 16:42:11 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void mapping(t_sizes *s)
 {
@@ -18,7 +18,7 @@ void mapping(t_sizes *s)
 	int num;
 
 	num = 0;
-	i.x = 0
+	i.x = 0;
 	i.h = 0;
 	while(s->map[i.x])
 	{

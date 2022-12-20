@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   comprove.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaronespinosa <aaronespinosa@student.42    +#+  +:+       +#+        */
+/*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:45:28 by aaronespino       #+#    #+#             */
-/*   Updated: 2022/11/26 22:03:16 by aaronespino      ###   ########.fr       */
+/*   Updated: 2022/12/20 17:09:46 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void comprove_ber(t_sizes *sizes)
 {
@@ -29,7 +29,7 @@ void comprove_ber(t_sizes *sizes)
 			||	sizes->map[x][0] != '1'
 			||	sizes->map[x][ft_strlen(sizes->map[x]) - 1] != '1')
 			{
-				ft_printf("Error\ninvalid map\n");
+				printf("Error\ninvalid map\n");
 				exit(0);
 			}
 			y++;
@@ -49,7 +49,7 @@ void rect_map(t_sizes *sizes)
 	{
 		if(ft_strlen(sizes->map[x]) != ft_strlen(sizes->map[0]))
 		{
-			ft_printf("Error\Map isn´t rectangular\n");
+			printf("Error\n Map isn´t rectangular\n");
 			exit (0);
 		}
 		y = 0;
@@ -83,7 +83,30 @@ void elem_map(t_sizes *sizes)
 	}
 	if (sizes->exit < 1 || sizes->position < 1 || sizes->coins < 1)
 	{
-		ft_printf("Error\nMissing elements\n");
+		printf("Error\nMissing elements\n");
 		exit (0);
 	}
+}
+
+int count_coins(t_sizes *sizes)
+{
+	unsigned int x;
+	unsigned int y;
+	unsigned int counter;
+
+	x = 0;
+	y = 0;
+	counter = 0;
+	while (sizes->map[x] != 0)
+	{
+		y = 0;
+		while (sizes->map[x][y] != '\0')
+		{
+			if (sizes->map[x][y] == 'C')
+				counter++;
+			y++;
+		}
+		x++;
+	}
+	return (counter);
 }

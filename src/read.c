@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   read.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaronespinosa <aaronespinosa@student.42    +#+  +:+       +#+        */
+/*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:44:10 by aaronespino       #+#    #+#             */
-/*   Updated: 2022/11/26 20:57:06 by aaronespino      ###   ########.fr       */
+/*   Updated: 2022/12/20 16:47:56 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 int	read_len(char *map)
 {
@@ -31,7 +31,7 @@ char	**read_map(char *map)
 {
 	int		fd;
 	char	*buff;
-	int		res;
+	char	**res;
 
 	fd = open(map, O_RDONLY, 0);
 	buff = malloc(sizeof(char) * BUFFER_SIZE);

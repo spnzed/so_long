@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sprite_reaction.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaronespinosa <aaronespinosa@student.42    +#+  +:+       +#+        */
+/*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:55:11 by aaronespino       #+#    #+#             */
-/*   Updated: 2022/11/26 20:56:34 by aaronespino      ###   ########.fr       */
+/*   Updated: 2022/12/20 17:09:31 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 void remove_spr(t_sizes *sizes)
 {

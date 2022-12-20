@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaronespinosa <aaronespinosa@student.42    +#+  +:+       +#+        */
+/*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:46:24 by aaespino          #+#    #+#             */
-/*   Updated: 2022/11/26 22:02:10 by aaronespino      ###   ########.fr       */
+/*   Updated: 2022/12/20 17:09:23 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct s_index
 void comprove_ber(t_sizes *sizes);
 void rect_map(t_sizes *sizes);
 void elem_map(t_sizes *sizes);
+int count_coins(t_sizes *sizes);
 
 void mapping(t_sizes *s);
 void *put_sprite(t_sizes *s, int x, int y);
@@ -69,6 +70,5 @@ char	**read_map(char *map);
 
 void remove_spr(t_sizes *sizes);
 void **save_spr(t_sizes *sizes);
-
 
 #endif

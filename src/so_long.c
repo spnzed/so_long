@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaronespinosa <aaronespinosa@student.42    +#+  +:+       +#+        */
+/*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:36:37 by aaespino          #+#    #+#             */
-/*   Updated: 2022/11/26 22:02:52 by aaronespino      ###   ########.fr       */
+/*   Updated: 2022/12/20 17:12:09 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int main(int argc, char **argv)
 {
 	t_sizes	sizes;
-	void	*mlx;
-	void	*win_mlx;
+//	void	*mlx;
+//	void	*win_mlx;
 
 	if (argc != 2 || ft_strrncmp(argv[1], ".ber", 4) != 0)
 		return(0);
@@ -27,9 +27,9 @@ int main(int argc, char **argv)
 	sizes.map = read_map(argv[1]);
 	comprove_ber(&sizes);
 	rect_map(&sizes);
-	elements_in_map(&sizes);
+	elem_map(&sizes);
 	sizes.spr = calloc(sizeof(void *), (sizes.len));
-	if (!sizes.spr);
+	if (!sizes.spr)
 		return(0);
 	window(&sizes);
 	mapping(&sizes);

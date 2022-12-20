@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   map_to_screen.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaronespinosa <aaronespinosa@student.42    +#+  +:+       +#+        */
+/*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:47:55 by aaronespino       #+#    #+#             */
-/*   Updated: 2022/11/26 20:56:34 by aaronespino      ###   ########.fr       */
+/*   Updated: 2022/12/20 16:40:07 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "so_long.h"
 
 int countst(char **res)
 {
