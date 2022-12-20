@@ -34,6 +34,7 @@ SRC = 	ft_isalnum.c \
 		ft_striteri.c \
 		ft_itoa.c \
 		ft_split.c \
+		ft_strrncmp.c \
 
 CC = gcc
 
