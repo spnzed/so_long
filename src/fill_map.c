@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:49:04 by aaronespino       #+#    #+#             */
-/*   Updated: 2022/12/20 16:42:11 by aaespino         ###   ########.fr       */
+/*   Updated: 2022/12/20 18:04:14 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void *put_sprite(t_sizes *s, int x, int y)
 	else if (s->map[x][y] == 'E')
 		return (showing(s, "img/exit.xpm"));
 	else if (s->map[x][y] == 'P')
-		return (showing(s, "img/her.xpm"));
+		return (showing(s, "img/hero.xpm"));
 	else
 		return (0);
 }
