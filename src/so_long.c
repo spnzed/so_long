@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:36:37 by aaespino          #+#    #+#             */
-/*   Updated: 2022/12/20 17:12:09 by aaespino         ###   ########.fr       */
+/*   Updated: 2022/12/20 17:24:06 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 int main(int argc, char **argv)
 {
 	t_sizes	sizes;
-//	void	*mlx;
-//	void	*win_mlx;
 
 	if (argc != 2 || ft_strrncmp(argv[1], ".ber", 4) != 0)
 		return(0);
