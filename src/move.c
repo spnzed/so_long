@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aaronespinosa <aaronespinosa@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:51:21 by aaronespino       #+#    #+#             */
-/*   Updated: 2022/12/20 16:46:13 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/01/10 18:25:41 by aaronespino      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ void *lets_swap(int x, int y, t_sizes *sizes)
 	if (sizes->map[sizes->hx + x][sizes->hy + y] == 'C')
 		sizes->coins--;
 	if (sizes->map[sizes->hx + x][sizes->hy + y] == 'E' && sizes->coins == 0)
-		mlx_destroy_window(sizes->mlx_ptr, sizes->win);
-		exit(0);
+		close_it();
 	if (sizes->map[sizes->hx + x][sizes->hy + y] == 'E' && sizes->coins > 0)
 	{
 		mapping(sizes);
@@ -67,13 +66,13 @@ void found_hero(t_sizes *sizes)
 int lets_move(int keycap, t_sizes *sizes)
 {
 	found_hero(sizes);
-	if((keycap == 0 || keycap == 123) && sizes->map[sizes->hx][sizes->hy - 1] != '1')
+	if((keycap == 0) && sizes->map[sizes->hx][sizes->hy - 1] != '1')
 		lets_swap(0, -1, sizes);
-	if((keycap == 13 || keycap == 126) && sizes->map[sizes->hx - 1][sizes->hy] != '1')
+	if((keycap == 13) && sizes->map[sizes->hx - 1][sizes->hy] != '1')
 		lets_swap(-1, 0, sizes);
-	if((keycap == 2 || keycap == 124) && sizes->map[sizes->hx][sizes->hy + 1] != '1')
+	if((keycap == 2) && sizes->map[sizes->hx][sizes->hy + 1] != '1')
 		lets_swap(0, +1, sizes);
-	if((keycap == 1 || keycap == 125) && sizes->map[sizes->hx + 1][sizes->hy] != '1')
+	if((keycap == 1) && sizes->map[sizes->hx + 1][sizes->hy] != '1')
 		lets_swap(+1, 0, sizes);
 	else
 		return (0);

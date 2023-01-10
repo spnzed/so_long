@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   comprove.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aaronespinosa <aaronespinosa@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:45:28 by aaronespino       #+#    #+#             */
-/*   Updated: 2022/12/20 17:09:46 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/01/10 18:25:36 by aaronespino      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
