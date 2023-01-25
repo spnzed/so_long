@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:44:10 by aaronespino       #+#    #+#             */
-/*   Updated: 2022/12/20 16:47:56 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:20:43 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,26 @@ char	**read_map(char *map)
 	buff = malloc(sizeof(char) * BUFFER_SIZE);
 	read(fd, buff, BUFFER_SIZE);
 	res = ft_split(buff, '\n');
+	//comprobar elem_map if invalid elements, free buff
 	return (res);
+}
+
+void	check_path(t_sizes *sizes, int x, int y)
+{
+	if (sizes->map_aux[y][x] == 'C')
+		sizes->coins--;
+	if (sizes->map_aux[y][x] == 'P')
+		sizes->position--;
+	if (sizes->map_aux[y][x] == 'E')
+		sizes->exit--;
+	if (sizes->map_aux[y][x] != '1')
+	{
+		sizes->map_aux[y][x] = '1';
+	}
+	else
+		return ;
+	check_path(sizes, x + 1, y);
+	check_path(sizes, x, y + 1);
+	check_path(sizes, x - 1, y);
+	check_path(sizes, x ,y - 1);
 }

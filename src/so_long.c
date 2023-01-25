@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:36:37 by aaespino          #+#    #+#             */
-/*   Updated: 2022/12/20 17:41:59 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/01/25 15:40:29 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,15 @@ int main(int argc, char **argv)
 	if (argc != 2)
 		return (0);
 	sizes.map = read_map(argv[1]);
+	sizes.map_aux = read_map(argv[1]);
 	comprove_ber(&sizes);
 	rect_map(&sizes);
 	elem_map(&sizes);
+	if (!comprove_way(&sizes))
+	{
+		printf("Error\nWay is invalid\n");
+		return (0);
+	}
 	sizes.spr = calloc(sizeof(void *), (sizes.len));
 	if (!sizes.spr)
 		return(0);

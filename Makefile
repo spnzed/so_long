@@ -36,8 +36,10 @@ clean:
 fclean:		clean
 			${RM} ${NAME}
 			make fclean -C libft
-			rm so_long
 
 re:			fclean all
+
+test: re
+			./so_long map.ber
 
 .PHONY:		all clean fclean re

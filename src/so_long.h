@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:46:24 by aaespino          #+#    #+#             */
-/*   Updated: 2022/12/20 17:09:23 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:31:29 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_sizes
 	void	*win;
 	void	**spr;
 	char	**map;
+	char	**map_aux;
 	int		hx;
 	int		hy;
 	int		moves;
@@ -46,8 +47,14 @@ typedef struct s_index
 	int		w;
 }	t_index;
 
+typedef struct s_coord
+{
+	int				x;
+	int				y;
+	struct s_coord	*next;
+}	t_coord;
 
-void comprove_ber(t_sizes *sizes);
+void	comprove_ber(t_sizes *sizes);
 void rect_map(t_sizes *sizes);
 void elem_map(t_sizes *sizes);
 int count_coins(t_sizes *sizes);
@@ -58,6 +65,8 @@ void *showing(t_sizes *s, char *image);
 
 int countst(char **res);
 void window(t_sizes *sizes);
+int  comprove_way(t_sizes *sizes);
+void	put_error(char *str);
 
 int	close_it(void);
 void *lets_swap(int x, int y, t_sizes *sizes);
@@ -67,6 +76,7 @@ int check_esc(int keycap, t_sizes *sizes);
 
 int	read_len(char *map);
 char	**read_map(char *map);
+void	check_path(t_sizes *sizes, int x, int y);
 
 void remove_spr(t_sizes *sizes);
 void **save_spr(t_sizes *sizes);
