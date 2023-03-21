@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:44:10 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/01/25 15:20:43 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/03/21 18:46:14 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,11 @@ void	check_path(t_sizes *sizes, int x, int y)
 	if (sizes->map_aux[y][x] == 'P')
 		sizes->position--;
 	if (sizes->map_aux[y][x] == 'E')
+	{
 		sizes->exit--;
+		sizes->map_aux[y][x] = '1';
+		return;
+	}
 	if (sizes->map_aux[y][x] != '1')
 	{
 		sizes->map_aux[y][x] = '1';
