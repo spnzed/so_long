@@ -6,15 +6,15 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:55:11 by aaronespino       #+#    #+#             */
-/*   Updated: 2022/12/20 17:09:31 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/03/22 16:15:46 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void remove_spr(t_sizes *sizes)
+void	remove_spr(t_sizes *sizes)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (sizes->spr[i])
@@ -24,7 +24,7 @@ void remove_spr(t_sizes *sizes)
 	}
 }
 
-void **save_spr(t_sizes *sizes)
+void	**save_spr(t_sizes *sizes)
 {
 	sizes->spr = calloc(sizeof(void *), (sizes->len));
 	if (!sizes->spr)

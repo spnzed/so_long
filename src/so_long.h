@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:46:24 by aaespino          #+#    #+#             */
-/*   Updated: 2023/01/25 13:31:29 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/03/22 16:17:22 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,30 +55,30 @@ typedef struct s_coord
 }	t_coord;
 
 void	comprove_ber(t_sizes *sizes);
-void rect_map(t_sizes *sizes);
-void elem_map(t_sizes *sizes);
-int count_coins(t_sizes *sizes);
+void	rect_map(t_sizes *sizes);
+void	elem_map(t_sizes *sizes);
+int		count_coins(t_sizes *sizes);
 
-void mapping(t_sizes *s);
-void *put_sprite(t_sizes *s, int x, int y);
-void *showing(t_sizes *s, char *image);
+void	mapping(t_sizes *s);
+void	*put_sprite(t_sizes *s, int x, int y);
+void	*showing(t_sizes *s, char *image);
 
-int countst(char **res);
-void window(t_sizes *sizes);
-int  comprove_way(t_sizes *sizes);
+int		countst(char **res);
+void	window(t_sizes *sizes);
+int		comprove_way(t_sizes *sizes);
 void	put_error(char *str);
 
-int	close_it(void);
-void *lets_swap(int x, int y, t_sizes *sizes);
-void found_hero(t_sizes *sizes);
-int lets_move(int keycap, t_sizes *sizes);
-int check_esc(int keycap, t_sizes *sizes);
+int		close_it(void);
+void	*lets_swap(int x, int y, t_sizes *sizes);
+void	found_hero(t_sizes *sizes);
+int		lets_move(int keycap, t_sizes *sizes);
+int		check_esc(int keycap, t_sizes *sizes);
 
-int	read_len(char *map);
+int		read_len(char *map);
 char	**read_map(char *map);
 void	check_path(t_sizes *sizes, int x, int y);
 
-void remove_spr(t_sizes *sizes);
-void **save_spr(t_sizes *sizes);
+void	remove_spr(t_sizes *sizes);
+void	**save_spr(t_sizes *sizes);
 
 #endif

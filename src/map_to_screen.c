@@ -6,26 +6,26 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:47:55 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/01/25 15:38:30 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:16:20 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int countst(char **res)
+int	countst(char **res)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (res[i] != 0)
 		i++;
-	return(i);
+	return (i);
 }
 
-void window(t_sizes *sizes)
+void	window(t_sizes *sizes)
 {
-	int ancho;
-	int alto;
+	int	ancho;
+	int	alto;
 
 	ancho = ft_strlen(sizes->map[0]) * IMG_SIZE;
 	alto = countst(sizes->map) * IMG_SIZE;
@@ -33,7 +33,7 @@ void window(t_sizes *sizes)
 	sizes->win = mlx_new_window(sizes->mlx_ptr, (ancho), (alto), "so_long");
 }
 
-int  comprove_way(t_sizes *sizes)
+int	comprove_way(t_sizes *sizes)
 {
 	int		is_possible;
 	int		aux_coins;

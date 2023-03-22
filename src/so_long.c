@@ -6,24 +6,14 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:36:37 by aaespino          #+#    #+#             */
-/*   Updated: 2023/01/25 15:40:29 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:26:23 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int main(int argc, char **argv)
+int	main2(t_sizes sizes)
 {
-	t_sizes	sizes;
-
-	if (argc != 2 || ft_strrncmp(argv[1], ".ber", 4) != 0)
-		return(0);
-	sizes.moves = 0;
-	sizes.len = read_len(argv[1]);
-	if (argc != 2)
-		return (0);
-	sizes.map = read_map(argv[1]);
-	sizes.map_aux = read_map(argv[1]);
 	comprove_ber(&sizes);
 	rect_map(&sizes);
 	elem_map(&sizes);
@@ -34,7 +24,7 @@ int main(int argc, char **argv)
 	}
 	sizes.spr = calloc(sizeof(void *), (sizes.len));
 	if (!sizes.spr)
-		return(0);
+		return (0);
 	window(&sizes);
 	mapping(&sizes);
 	sizes.coins = count_coins(&sizes);
@@ -42,4 +32,19 @@ int main(int argc, char **argv)
 	mlx_hook(sizes.win, 17, 0, close_it, &sizes);
 	mlx_loop(sizes.mlx_ptr);
 	return (0);
+}
+
+int	main(int argc, char **argv)
+{
+	t_sizes	sizes;
+
+	if (argc != 2 || ft_strrncmp(argv[1], ".ber", 4) != 0)
+		return (0);
+	sizes.moves = 0;
+	sizes.len = read_len(argv[1]);
+	if (argc != 2)
+		return (0);
+	sizes.map = read_map(argv[1]);
+	sizes.map_aux = read_map(argv[1]);
+	return (main2(sizes));
 }

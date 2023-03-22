@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:45:28 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/01/25 15:40:05 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/03/22 17:32:58 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,16 @@ void	comprove_ber(t_sizes *sizes)
 	}
 }
 
-void rect_map(t_sizes *sizes)
+void	rect_map(t_sizes *sizes)
 {
-	unsigned int x;
-	unsigned int y;
+	unsigned int	x;
+	unsigned int	y;
 
 	x = 0;
 	y = 0;
 	while (sizes->map[x] != 0)
 	{
-		if(ft_strlen(sizes->map[x]) != ft_strlen(sizes->map[0]))
+		if (ft_strlen(sizes->map[x]) != ft_strlen(sizes->map[0]))
 		{
 			printf("Error\nMap isn´t rectangular\n");
 			exit (0);
@@ -61,10 +61,10 @@ void rect_map(t_sizes *sizes)
 	}
 }
 
-void elem_map(t_sizes *sizes)
+void	elem_map(t_sizes *sizes)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	sizes->exit = 0;
 	sizes->position = 0;
@@ -74,12 +74,14 @@ void elem_map(t_sizes *sizes)
 	{
 		y = -1;
 		while (sizes->map[x][++y] != '\0')
-		if (sizes->map[x][y] == 'E')
-			sizes->exit++;
-		else if (sizes->map[x][y] == 'P')
-			sizes->position++;
-		else if (sizes->map[x][y] == 'C')
-			sizes->coins++;
+		{
+			if (sizes->map[x][y] == 'E')
+				sizes->exit++;
+			else if (sizes->map[x][y] == 'P')
+				sizes->position++;
+			else if (sizes->map[x][y] == 'C')
+				sizes->coins++;
+		}
 	}
 	if (sizes->exit != 1 || sizes->position != 1 || sizes->coins < 1)
 	{
@@ -88,11 +90,11 @@ void elem_map(t_sizes *sizes)
 	}
 }
 
-int count_coins(t_sizes *sizes)
+int	count_coins(t_sizes *sizes)
 {
-	unsigned int x;
-	unsigned int y;
-	unsigned int counter;
+	unsigned int	x;
+	unsigned int	y;
+	unsigned int	counter;
 
 	x = 0;
 	y = 0;
@@ -108,15 +110,14 @@ int count_coins(t_sizes *sizes)
 		}
 		x++;
 	}
-	
 	return (counter);
 }
 
-int count_exits(t_sizes *sizes)
+int	count_exits(t_sizes *sizes)
 {
-	unsigned int x;
-	unsigned int y;
-	unsigned int counter;
+	unsigned int	x;
+	unsigned int	y;
+	unsigned int	counter;
 
 	x = 0;
 	y = 0;
@@ -132,6 +133,5 @@ int count_exits(t_sizes *sizes)
 		}
 		x++;
 	}
-	
 	return (counter);
 }
