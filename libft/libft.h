@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaronespinosa <aaronespinosa@student.42    +#+  +:+       +#+        */
+/*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:17:11 by aaespino          #+#    #+#             */
-/*   Updated: 2022/12/20 22:58:39 by aaronespino      ###   ########.fr       */
+/*   Updated: 2023/04/25 15:47:45 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
-int     ft_strrncmp(const char *str, const char *str2, size_t n);
+int		ft_strrncmp(const char *str, const char *str2, size_t n);
 
 #endif
