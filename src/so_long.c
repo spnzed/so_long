@@ -6,11 +6,26 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:36:37 by aaespino          #+#    #+#             */
-/*   Updated: 2023/03/22 17:26:23 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:47:40 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void em(char **map)
+{
+	char	*aux;
+	int		i;
+
+	i = 0;
+	aux = *map;
+	while (aux[i])
+	{
+		free(&aux[i]);
+		i++;
+	}
+	free(aux);
+}
 
 int	main2(t_sizes sizes)
 {
@@ -20,6 +35,7 @@ int	main2(t_sizes sizes)
 	if (!comprove_way(&sizes))
 	{
 		printf("Error\nWay is invalid\n");
+		em(sizes.map);
 		return (0);
 	}
 	sizes.spr = calloc(sizeof(void *), (sizes.len));

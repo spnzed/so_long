@@ -13,33 +13,35 @@ SRC = 	src/comprove.c \
 
 OBJ 	= ${SRC:.c=.o}
 
+ARCHIVES	= libft/libft.a mlx/libmlx.a
+
 RM 		= rm -f
 
 HEADER	= src/so_long.h
 
-.c.o:	
-	make -C libft
-	make -C mlx
-	gcc -c ${CFLAGS} -Imlx $< -o ${<:.c=.o}
+all:
+	@make --no-print-directory -C libft
+	@make --no-print-directory -C mlx libmlx.a
+	@make --no-print-directory ${NAME}
 
-all:		${NAME}
+%.o: %.c	${HEADER} ${ARCHIVES}
+	gcc ${CFLAGS} -Imlx -c $< -o $@
 
 ${NAME}:	${OBJ} ${HEADER}
-			ar rc ${NAME} ${OBJ}
-			gcc ${CFLAGS} -Lmlx -lmlx -framework OpenGL -framework AppKit libft/libft.a mlx/libmlx.a ${NAME} -o so_long
+			gcc ${CFLAGS} -Lmlx -lmlx -framework OpenGL -framework AppKit ${ARCHIVES} ${OBJ} -o ${NAME}
 
 clean:
 			${RM} ${OBJ}
-			make clean -C libft
-			make clean -C mlx
+			make clean --no-print-directory -C libft
+			make clean --no-print-directory -C mlx
 
 fclean:		clean
 			${RM} ${NAME}
-			make fclean -C libft
+			make fclean --no-print-directory -C libft
 
 re:			fclean all
 
 test: re
 			./so_long map.ber
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re test

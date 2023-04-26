@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:49:04 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/03/22 17:23:23 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/04/25 17:02:53 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,15 @@ void	mapping(t_sizes *s)
 void	*put_sprite(t_sizes *s, int x, int y)
 {
 	if (s->map[x][y] == '1')
-		return (showing(s, "img/wall.xpm"));
+		return (showing(s, "textures/wall.xpm"));
 	else if (s->map[x][y] == '0')
-		return (showing(s, "img/floor.xpm"));
+		return (showing(s, "textures/floor.xpm"));
 	else if (s->map[x][y] == 'C')
-		return (showing(s, "img/collectable.xpm"));
+		return (showing(s, "textures/collectable.xpm"));
 	else if (s->map[x][y] == 'E')
-		return (showing(s, "img/exit.xpm"));
+		return (showing(s, "textures/exit.xpm"));
 	else if (s->map[x][y] == 'P')
-		return (showing(s, "img/hero.xpm"));
+		return (showing(s, "textures/hero.xpm"));
 	else
 		return (0);
 }

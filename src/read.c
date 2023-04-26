@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:44:10 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/03/22 17:27:16 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/04/26 17:28:29 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ char	**read_map(char *map)
 	buff = malloc(sizeof(char) * BUFFER_SIZE);
 	read(fd, buff, BUFFER_SIZE);
 	res = ft_split(buff, '\n');
+	free(buff);
 	return (res);
 }
 

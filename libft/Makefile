@@ -44,8 +44,10 @@ RM = rm -f
 
 OBJ = $(SRC:%.c=%.o)
 
-$(NAME):
+%.o: %.c libft.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
+$(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -c $(SRC) -I ./
 	@ar rc $(NAME) $(OBJ)
 
