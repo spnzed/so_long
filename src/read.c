@@ -6,11 +6,40 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:44:10 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/04/26 17:28:29 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:41:02 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	check_arguments(int argc)
+{
+	if (argc > 2)
+	{
+		printf("\nError\nToo many arguments");
+		exit(0);
+	}
+	if (argc < 2)
+	{
+		printf("\nError\nThe Map file is missing\n");
+		exit(0);
+	}
+}
+
+void	check_extension(char *map)
+{
+	int	i;
+
+	i = ft_strlen(map);
+	if (i > 2 && map[i - 4] == '.' && map[i - 3] == 'b'
+		&& map[i - 2] == 'e' && map[i - 1] == 'r')
+		;
+	else
+	{
+		printf("Error\n The file does not have the correct extension\n");
+		exit (0);
+	}
+}
 
 int	read_len(char *map)
 {

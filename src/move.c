@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:51:21 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/04/26 16:53:48 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:35:26 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	close_it(void)
 void	*lets_swap(int x, int y, t_sizes *sizes)
 {
 	void	**aux;
-	
+
 	remove_spr(sizes);
 	mlx_clear_window(sizes->mlx_ptr, sizes->win);
 	if (sizes->map[sizes->hx + x][sizes->hy + y] == 'C')

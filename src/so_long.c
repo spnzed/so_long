@@ -6,13 +6,13 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:36:37 by aaespino          #+#    #+#             */
-/*   Updated: 2023/04/26 17:47:40 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:36:04 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void em(char **map)
+static void	em(char **map)
 {
 	char	*aux;
 	int		i;
@@ -54,8 +54,8 @@ int	main(int argc, char **argv)
 {
 	t_sizes	sizes;
 
-	if (argc != 2 || ft_strrncmp(argv[1], ".ber", 4) != 0)
-		return (0);
+	check_arguments(argc);
+	check_extension(argv[1]);
 	sizes.moves = 0;
 	sizes.len = read_len(argv[1]);
 	if (argc != 2)

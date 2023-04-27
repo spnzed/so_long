@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:46:24 by aaespino          #+#    #+#             */
-/*   Updated: 2023/04/26 16:50:21 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/04/27 17:30:37 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,8 @@ void	found_hero(t_sizes *sizes);
 int		lets_move(int keycap, t_sizes *sizes);
 int		check_esc(int keycap, t_sizes *sizes);
 
+void	check_arguments(int argc);
+void	check_extension(char *map);
 int		read_len(char *map);
 char	**read_map(char *map);
 void	check_path(t_sizes *sizes, int x, int y);
