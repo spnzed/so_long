@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:44:10 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/04/27 17:41:02 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/04/28 17:22:10 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	check_arguments(int argc)
 {
 	if (argc > 2)
 	{
-		printf("\nError\nToo many arguments");
+		printf("Error\nToo many arguments\n");
 		exit(0);
 	}
 	if (argc < 2)
 	{
-		printf("\nError\nThe Map file is missing\n");
+		printf("Error\nThe Map file is missing\n");
 		exit(0);
 	}
 }
