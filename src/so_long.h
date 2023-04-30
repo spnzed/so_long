@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:46:24 by aaespino          #+#    #+#             */
-/*   Updated: 2023/04/27 17:30:37 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/04/30 19:51:21 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int		count_coins(t_sizes *sizes);
 void	mapping(t_sizes *s);
 void	*put_sprite(t_sizes *s, int x, int y);
 void	*showing(t_sizes *s, char *image);
+void	comprove_ber2(t_sizes *sizes);
 
 int		countst(char **res);
 void	window(t_sizes *sizes);

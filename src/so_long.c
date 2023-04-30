@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:36:37 by aaespino          #+#    #+#             */
-/*   Updated: 2023/04/28 17:29:46 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/04/30 19:50:56 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static void	free_map(char **map)
 int	main2(t_sizes sizes)
 {
 	comprove_ber(&sizes);
+	comprove_ber2(&sizes);
 	rect_map(&sizes);
 	elem_map(&sizes);
 	if (!comprove_way(&sizes))

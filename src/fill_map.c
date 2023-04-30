@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:49:04 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/04/25 17:02:53 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/04/30 19:50:15 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,28 @@ void	*showing(t_sizes *s, char *image)
 
 	img = mlx_xpm_file_to_image(s->mlx_ptr, image, &img_size, &img_size);
 	return (img);
+}
+
+void	comprove_ber2(t_sizes *sizes)
+{
+	unsigned int	x;
+	unsigned int	y;
+
+	x = 0;
+	y = 0;
+	while (sizes->map[x] != 0)
+	{
+		y = 0;
+		while (sizes->map[x][y] != '\0')
+		{
+			if (sizes->map[x][y] != '1' || sizes->map[x][y] != '0' || sizes->map[x][y] != 'E' || 
+			sizes->map[x][y] != 'P' || sizes->map[x][y] != 'C' || sizes->map[x][y] != '\n')
+			{
+				printf("Map contains wrong characters\n");
+				exit (0);
+			}
+			y++;
+		}
+		x++;
+	}
 }
