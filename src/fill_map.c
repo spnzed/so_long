@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:49:04 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/04/30 19:50:15 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/04/30 19:57:40 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,9 @@ void	comprove_ber2(t_sizes *sizes)
 		y = 0;
 		while (sizes->map[x][y] != '\0')
 		{
-			if (sizes->map[x][y] != '1' || sizes->map[x][y] != '0' || sizes->map[x][y] != 'E' || 
-			sizes->map[x][y] != 'P' || sizes->map[x][y] != 'C' || sizes->map[x][y] != '\n')
+			if (sizes->map[x][y] != '1' || sizes->map[x][y] != '0' ||
+			sizes->map[x][y] != 'E' || sizes->map[x][y] != 'P' ||
+			sizes->map[x][y] != 'C' || sizes->map[x][y] != '\n')
 			{
 				printf("Map contains wrong characters\n");
 				exit (0);
