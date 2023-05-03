@@ -9,6 +9,8 @@ SRC = 	src/comprove.c \
 		src/read.c \
 		src/sprite_reaction.c \
 		src/so_long.c \
+		src/check_ev.c \
+		src/count.c \
 
 
 OBJ 	= ${SRC:.c=.o}

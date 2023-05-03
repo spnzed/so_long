@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:46:24 by aaespino          #+#    #+#             */
-/*   Updated: 2023/04/30 19:51:21 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:37:15 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,19 +54,22 @@ typedef struct s_coord
 	struct s_coord	*next;
 }	t_coord;
 
-void	comprove_ber(t_sizes *sizes);
-void	rect_map(t_sizes *sizes);
-void	elem_map(t_sizes *sizes);
+void	check_ber_walls(t_sizes *sizes);
+void	check_ber_chars(t_sizes *sizes);
+void	check_ber_rect(t_sizes *sizes);
+void	check_ber_elem(t_sizes *sizes);
+int		check_way(t_sizes *sizes);
+
 int		count_coins(t_sizes *sizes);
+int		count_exits(t_sizes *sizes);
 
 void	mapping(t_sizes *s);
 void	*put_sprite(t_sizes *s, int x, int y);
 void	*showing(t_sizes *s, char *image);
-void	comprove_ber2(t_sizes *sizes);
 
 int		countst(char **res);
 void	window(t_sizes *sizes);
-int		comprove_way(t_sizes *sizes);
+int		check_way(t_sizes *sizes);
 void	put_error(char *str);
 
 int		close_it(void);
@@ -83,5 +86,10 @@ void	check_path(t_sizes *sizes, int x, int y);
 
 void	remove_spr(t_sizes *sizes);
 void	**save_spr(t_sizes *sizes);
+
+void	check_ev_arg(int argc, char **argv);
+void	check_ev_ber(t_sizes sizes);
+void	prepare_sizes(t_sizes *sizes, char **argv);
+void	prepare_2_print(t_sizes *sizes);
 
 #endif

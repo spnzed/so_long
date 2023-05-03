@@ -6,56 +6,42 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:36:37 by aaespino          #+#    #+#             */
-/*   Updated: 2023/04/30 19:50:56 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:37:36 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	free_map(char **map)
+void	init_sizes(t_sizes *aux)
 {
-	while (*map)
-	{
-		free(*map);
-		map++;
-	}
-}
+	t_sizes	sizes;
 
-int	main2(t_sizes sizes)
-{
-	comprove_ber(&sizes);
-	comprove_ber2(&sizes);
-	rect_map(&sizes);
-	elem_map(&sizes);
-	if (!comprove_way(&sizes))
-	{
-		printf("Error\nWay is invalid\n");
-		free_map(sizes.map);
-		return (0);
-	}
-	sizes.spr = calloc(sizeof(void *), (sizes.len));
-	if (!sizes.spr)
-		return (0);
-	window(&sizes);
-	mapping(&sizes);
-	sizes.coins = count_coins(&sizes);
-	mlx_hook(sizes.win, 2, 0, check_esc, &sizes);
-	mlx_hook(sizes.win, 17, 0, close_it, &sizes);
-	mlx_loop(sizes.mlx_ptr);
-	return (0);
+	sizes = *aux;
+	sizes.mlx_ptr = 0;
+	sizes.win = 0;
+	sizes.spr = 0;
+	sizes.map = 0;
+	sizes.map_aux = 0;
+	sizes.hx = 0;
+	sizes.hy = 0;
+	sizes.moves = 0;
+	sizes.len = 0;
+	sizes.coins = 0;
+	sizes.exit = 0;
+	sizes.position = 0;
 }
 
 int	main(int argc, char **argv)
 {
 	t_sizes	sizes;
 
-	check_arguments(argc);
-	check_extension(argv[1]);
-	sizes.moves = 0;
-	sizes.len = read_len(argv[1]);
-	if (argc != 2)
-		return (0);
-	sizes.map = read_map(argv[1]);
-	sizes.map_aux = read_map(argv[1]);
-	return (main2(sizes));
+	init_sizes(&sizes);
+	check_ev_arg(argc, argv);
+	prepare_sizes(&sizes, argv);
+	check_ev_ber(sizes);
+	prepare_2_print(&sizes);
+	mlx_hook(sizes.win, 2, 0, check_esc, &sizes);
+	mlx_hook(sizes.win, 17, 0, close_it, &sizes);
+	mlx_loop(sizes.mlx_ptr);
+	return (0);
 }

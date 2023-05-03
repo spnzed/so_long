@@ -6,13 +6,13 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:45:28 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/04/28 16:57:11 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/05/02 19:19:56 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	comprove_ber(t_sizes *sizes)
+void	check_ber_walls(t_sizes *sizes)
 {
 	unsigned int	x;
 	unsigned int	y;
@@ -38,7 +38,7 @@ void	comprove_ber(t_sizes *sizes)
 	}
 }
 
-void	rect_map(t_sizes *sizes)
+void	check_ber_rect(t_sizes *sizes)
 {
 	unsigned int	x;
 	unsigned int	y;
@@ -61,7 +61,32 @@ void	rect_map(t_sizes *sizes)
 	}
 }
 
-void	elem_map(t_sizes *sizes)
+void	check_ber_chars(t_sizes *sizes)
+{
+	unsigned int	x;
+	unsigned int	y;
+
+	x = 0;
+	y = 0;
+	while (sizes->map[x] != 0)
+	{
+		y = 0;
+		while (sizes->map[x][y] != '\0')
+		{
+			if (sizes->map[x][y] != '1' && sizes->map[x][y] != '0' &&
+			sizes->map[x][y] != 'E' && sizes->map[x][y] != 'P' &&
+			sizes->map[x][y] != 'C' && sizes->map[x][y] != '\n')
+			{
+				printf("Error\nMap contains wrong characters\n");
+				exit (0);
+			}
+			y++;
+		}
+		x++;
+	}
+}
+
+void	check_ber_elem(t_sizes *sizes)
 {
 	int	x;
 	int	y;
@@ -90,48 +115,23 @@ void	elem_map(t_sizes *sizes)
 	}
 }
 
-int	count_coins(t_sizes *sizes)
+int	check_way(t_sizes *sizes)
 {
-	unsigned int	x;
-	unsigned int	y;
-	unsigned int	counter;
+	int		is_possible;
+	int		aux_coins;
+	int		x;
+	int		y;
 
-	x = 0;
-	y = 0;
-	counter = 0;
-	while (sizes->map[x] != 0)
-	{
-		y = 0;
-		while (sizes->map[x][y] != '\0')
-		{
-			if (sizes->map[x][y] == 'C')
-				counter++;
-			y++;
-		}
-		x++;
-	}
-	return (counter);
-}
-
-int	count_exits(t_sizes *sizes)
-{
-	unsigned int	x;
-	unsigned int	y;
-	unsigned int	counter;
-
-	x = 0;
-	y = 0;
-	counter = 0;
-	while (sizes->map[x] != 0)
-	{
-		y = 0;
-		while (sizes->map[x][y] != '\0')
-		{
-			if (sizes->map[x][y] == 'E')
-				counter++;
-			y++;
-		}
-		x++;
-	}
-	return (counter);
+	aux_coins = sizes->coins;
+	found_hero(sizes);
+	x = sizes->hx;
+	y = sizes->hy;
+	check_path(sizes, x, y);
+	is_possible = 1;
+	if (sizes->coins != 0 || sizes->exit != 0 || sizes->position != 0)
+		is_possible = 0;
+	sizes->coins = aux_coins;
+	sizes->exit = 1;
+	sizes->position = 1;
+	return (is_possible);
 }
