@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:35:58 by aaespino          #+#    #+#             */
-/*   Updated: 2023/05/03 16:37:07 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/05/03 16:54:18 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	check_ev_ber(t_sizes sizes)
 	check_ber_elem(&sizes);
 	if (!check_way(&sizes))
 	{
-		printf("Error\nWay is invalid\n");
-		while(*sizes.map)
-		{ 
+		ft_putstr_fd("Error\nWay is invalid\n", 2);
+		while (*sizes.map)
+		{
 			free(*sizes.map);
 			sizes.map++;
 		}

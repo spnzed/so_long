@@ -30,7 +30,7 @@ all:
 	gcc ${CFLAGS} -Imlx -c $< -o $@
 
 ${NAME}:	${OBJ} ${HEADER}
-			gcc ${CFLAGS} -Lmlx -lmlx -framework OpenGL -framework AppKit ${ARCHIVES} ${OBJ} -o ${NAME}
+			gcc ${CFLAGS} -Llibft/ -lft -Lmlx -lmlx -framework OpenGL -framework AppKit ${ARCHIVES} ${OBJ} -o ${NAME} -I include/ -I libft/include/
 
 clean:
 			${RM} ${OBJ}

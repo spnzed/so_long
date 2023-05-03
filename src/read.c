@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:44:10 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/04/28 17:22:10 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:03:17 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ void	check_arguments(int argc)
 {
 	if (argc > 2)
 	{
-		printf("Error\nToo many arguments\n");
+		ft_putstr_fd("Error\nToo many arguments\n", 2);
 		exit(0);
 	}
 	if (argc < 2)
 	{
-		printf("Error\nThe Map file is missing\n");
+		ft_putstr_fd("Error\nThe Map file is missing\n", 2);
 		exit(0);
 	}
 }
@@ -36,7 +36,7 @@ void	check_extension(char *map)
 		;
 	else
 	{
-		printf("Error\n The file does not have the correct extension\n");
+		ft_putstr_fd("Error\nThe file does not have the correct extension\n", 2);
 		exit (0);
 	}
 }

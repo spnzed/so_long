@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:45:28 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/05/02 19:19:56 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/05/03 17:02:14 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	check_ber_walls(t_sizes *sizes)
 			|| sizes->map[x][0] != '1'
 			|| sizes->map[x][ft_strlen(sizes->map[x]) - 1] != '1')
 			{
-				printf("Error\ninvalid map\n");
+				ft_putstr_fd("Error\nInvalid map\n", 2);
 				exit (0);
 			}
 			y++;
@@ -77,7 +77,7 @@ void	check_ber_chars(t_sizes *sizes)
 			sizes->map[x][y] != 'E' && sizes->map[x][y] != 'P' &&
 			sizes->map[x][y] != 'C' && sizes->map[x][y] != '\n')
 			{
-				printf("Error\nMap contains wrong characters\n");
+				ft_putstr_fd("Error\nMap contains wrong characters\n", 2);
 				exit (0);
 			}
 			y++;
@@ -110,7 +110,7 @@ void	check_ber_elem(t_sizes *sizes)
 	}
 	if (sizes->exit != 1 || sizes->position != 1 || sizes->coins < 1)
 	{
-		printf("Error\nInvalid elements\n");
+		ft_putstr_fd("Error\nInvalid elements\n", 2);
 		exit (0);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/13 17:17:11 by aaespino          #+#    #+#             */
-/*   Updated: 2023/04/25 15:47:45 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/05/03 19:00:54 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <stdio.h>
 # include <string.h>
 # include <unistd.h>
 

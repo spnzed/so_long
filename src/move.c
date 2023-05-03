@@ -6,11 +6,12 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:51:21 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/04/27 17:35:26 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/05/03 19:19:55 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "../libft/include/ft_printf.h"
 
 int	close_it(void)
 {
@@ -38,7 +39,7 @@ void	*lets_swap(int x, int y, t_sizes *sizes)
 	sizes->spr = save_spr(sizes);
 	free(aux);
 	sizes->moves++;
-	printf("Moves:%d\n", sizes->moves);
+	ft_printf("Moves:%d\n", sizes->moves);
 	mapping(sizes);
 	return (0);
 }

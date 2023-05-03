@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 18:46:24 by aaespino          #+#    #+#             */
-/*   Updated: 2023/05/03 16:37:15 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/05/03 19:18:09 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include <sys/types.h>
 # include <sys/uio.h>
 # include "../mlx/mlx.h"
-# include "../libft/libft.h"
+# include "../libft/include/libft.h"
 # define BUFFER_SIZE 4096
 # define IMG_SIZE 32
 
