@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:35:58 by aaespino          #+#    #+#             */
-/*   Updated: 2023/05/04 16:28:13 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:39:37 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 void	check_ev_arg(int argc, char **argv)
 {
 	if (argc != 2)
-		exit (0);
-	check_arguments(argc);
+		check_arguments(argc);
 	check_extension(argv[1]);
 }
 
