@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:51:21 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/05/03 19:19:55 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/05/04 17:14:27 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,13 +72,25 @@ int	lets_move(int keycap, t_sizes *sizes)
 {
 	found_hero(sizes);
 	if ((keycap == 0) && sizes->map[sizes->hx][sizes->hy - 1] != '1')
+	{
+		usleep(50000);
 		lets_swap(0, -1, sizes);
+	}
 	if ((keycap == 13) && sizes->map[sizes->hx - 1][sizes->hy] != '1')
+	{
+		usleep(50000);
 		lets_swap(-1, 0, sizes);
+	}
 	if ((keycap == 2) && sizes->map[sizes->hx][sizes->hy + 1] != '1')
+	{
+		usleep(50000);
 		lets_swap(0, +1, sizes);
+	}
 	if ((keycap == 1) && sizes->map[sizes->hx + 1][sizes->hy] != '1')
+	{
+		usleep(50000);
 		lets_swap(+1, 0, sizes);
+	}
 	else
 		return (0);
 	return (0);
