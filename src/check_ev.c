@@ -6,11 +6,12 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:35:58 by aaespino          #+#    #+#             */
-/*   Updated: 2023/05/03 16:54:18 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:28:13 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "../libft/include/ft_printf.h"
 
 void	check_ev_arg(int argc, char **argv)
 {
@@ -28,7 +29,7 @@ void	check_ev_ber(t_sizes sizes)
 	check_ber_elem(&sizes);
 	if (!check_way(&sizes))
 	{
-		ft_putstr_fd("Error\nWay is invalid\n", 2);
+		ft_printf("Error\nWay is invalid\n");
 		while (*sizes.map)
 		{
 			free(*sizes.map);

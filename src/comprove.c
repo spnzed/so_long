@@ -6,11 +6,12 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:45:28 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/05/03 17:02:14 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/05/04 16:28:19 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+#include "../libft/include/ft_printf.h"
 
 void	check_ber_walls(t_sizes *sizes)
 {
@@ -29,7 +30,7 @@ void	check_ber_walls(t_sizes *sizes)
 			|| sizes->map[x][0] != '1'
 			|| sizes->map[x][ft_strlen(sizes->map[x]) - 1] != '1')
 			{
-				ft_putstr_fd("Error\nInvalid map\n", 2);
+				ft_printf("Error\nInvalid map\n");
 				exit (0);
 			}
 			y++;
@@ -49,7 +50,7 @@ void	check_ber_rect(t_sizes *sizes)
 	{
 		if (ft_strlen(sizes->map[x]) != ft_strlen(sizes->map[0]))
 		{
-			printf("Error\nMap isn´t rectangular\n");
+			ft_printf("Error\nMap isn´t rectangular\n");
 			exit (0);
 		}
 		y = 0;
@@ -77,7 +78,7 @@ void	check_ber_chars(t_sizes *sizes)
 			sizes->map[x][y] != 'E' && sizes->map[x][y] != 'P' &&
 			sizes->map[x][y] != 'C' && sizes->map[x][y] != '\n')
 			{
-				ft_putstr_fd("Error\nMap contains wrong characters\n", 2);
+				ft_printf("Error\nMap contains wrong characters\n");
 				exit (0);
 			}
 			y++;
@@ -110,7 +111,7 @@ void	check_ber_elem(t_sizes *sizes)
 	}
 	if (sizes->exit != 1 || sizes->position != 1 || sizes->coins < 1)
 	{
-		ft_putstr_fd("Error\nInvalid elements\n", 2);
+		ft_printf("Error\nInvalid elements\n");
 		exit (0);
 	}
 }
