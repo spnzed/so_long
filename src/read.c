@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aaronespinosa <aaronespinosa@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:44:10 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/05/04 16:29:35 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/05/27 12:17:56 by aaronespino      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,19 +72,19 @@ char	**read_map(char *map)
 
 void	check_path(t_sizes *sizes, int x, int y)
 {
-	if (sizes->map_aux[y][x] == 'C')
+	if (sizes->map_aux[x][y] == 'C')
 		sizes->coins--;
-	if (sizes->map_aux[y][x] == 'P')
+	if (sizes->map_aux[x][y] == 'P')
 		sizes->position--;
-	if (sizes->map_aux[y][x] == 'E')
+	if (sizes->map_aux[x][y] == 'E')
 	{
 		sizes->exit--;
-		sizes->map_aux[y][x] = '1';
+		sizes->map_aux[x][y] = '1';
 		return ;
 	}
-	if (sizes->map_aux[y][x] != '1')
+	if (sizes->map_aux[x][y] != '1')
 	{
-		sizes->map_aux[y][x] = '1';
+		sizes->map_aux[x][y] = '1';
 	}
 	else
 		return ;
