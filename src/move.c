@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:51:21 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/05/04 17:14:27 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/06/24 18:01:21 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 int	close_it(void)
 {
+	ft_printf("Game Over !\n");
 	exit (0);
 }
 
