@@ -15,9 +15,6 @@
 
 int	ft_printf_char(int c)
 {
-	char	a;
-
-	a = (char)c;
 	ft_putchar_fd(c, 1);
 	return (1);
 }

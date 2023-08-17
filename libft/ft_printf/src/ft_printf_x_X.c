@@ -43,9 +43,6 @@ int	ft_printf_hex(unsigned long p)
 
 void	ft_printf_hex2(unsigned long p)
 {
-	int	ret;
-
-	ret = 0;
 	if (p >= 16)
 	{
 		ft_printf_hex2(p / 16);
