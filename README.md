@@ -3,7 +3,7 @@
 	 
   <i>42cursus' project #5</i>
 </h2>
-May it be a file, stdin, or even later a network connection, you will always need a way to read content line by line. It is time to start working on this function, which will be essential for your future projects. In this repo you will find all the files regarding the implementations of the <b>get_next_line</b> functions, both its <b>mandatory</b> and <b>bonus</b> versions.
+In this project, we'll code a simple 2D game to get familiar with the mlx library and UI in general.
   <h1 align=center>
 
 ![so_longe](https://github.com/spnzed/so_long/assets/95354392/664cc4dd-7f9e-4ab6-848f-170149abf7bc)
