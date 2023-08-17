@@ -85,7 +85,7 @@ You'll need to install Xserver in your machine seeing as the library runs on X-W
 
 ```bash
 # Clone the repository
-$ git clone git@github.com:mewmewdevart/so_long.git
+$ git clone https://github.com/spnzed/so_long.git
 
 # Enter into the directory
 $ cd so_long/
@@ -93,18 +93,13 @@ $ cd so_long/
 
 **1. Run the Game**
 ```bash
-# Use that command to clone the Minilibx inside the libs/ folder
-$ make call_mlx
-
 # Run the command make root directory to run the mandatory part
 $ make
 
 # This command compiles the executable file 'so_long' and runs it along with any map
-# of your choice (or a custom one) located in the directory 'rscs/maps'.
+# of your choice (or a custom one) located in the directory 'maps'.
 #	To execute it, run the following command:
-$ ./bin/so_long ./rscs/maps/valids/map_valid_rectangle.ber
-# If you want to run the bonus part, run the 'make bonus' command in your directory
-#	and provide the correct path to the files starting with ./bin/so_long bonus
+$ ./so_long map.ber
 ```
 **2. How to play**
 - Control the player using the arrow keys (up, down, left, and right) or the letter keys (w, a, s, and d).
