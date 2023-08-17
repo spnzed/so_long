@@ -14,7 +14,14 @@ May it be a file, stdin, or even later a network connection, you will always nee
 Mandatory
 </h3>
 
-> <i>Calling the function `get_next_line` in a loop will then allow the user to read the text available on the file descriptor one line at a time until the end of it. It has to behave well both on external files and standard input. The function should return the line that has just been read. If there is nothing else to read or if an error has occurred it should return NULL. The <b>mandatory</b> part must deal with at least one file descriptor at a time, and can have more than one static variable.</i>
+Game actions:
+> <i>The player can move in four directions but cannot move into walls. To exit the game, the player needs to collect something. The WASD keys are used to move the main character, and the game has a top-down 2D view. The movements are displayed in the shell, and pressing ESC must close the window and quit the program cleanly. </i>
+
+Graphics actions:
+> <i>The program should display the image within a window, and window management should be smooth, such as switching to another window or minimizing. Pressing the [ESC] key should close the window and quit the program cleanly. The usage of MiniLibX images is mandatory.</i>
+
+Map actions:
+> <i>The map must be rectangular/square in shape, surrounded by walls with a clear path to the exit. It should be able to parse any type of map as long as it follows the aforementioned rules and contains three components - the exit, player start position, and collectibles. Additionally, if there is a misconfiguration in the map, the program should return an error message to indicate the issue.</i>
 
 <h3 align=center>
 Bonus
