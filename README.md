@@ -112,5 +112,6 @@ $ ./bin/so_long ./rscs/maps/valids/map_valid_rectangle.ber
 - Press the [ESC] key or Click in the 'X' window to exit the game.
 
 <p align="center">
-  
+<img width="841" alt="Captura de pantalla 2023-08-17 a las 12 01 43" src="https://github.com/spnzed/so_long/assets/95354392/ea6a73d7-2560-4c9f-b3d8-5e7263044a35">
+
 </p>
