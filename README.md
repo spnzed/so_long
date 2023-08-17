@@ -57,24 +57,60 @@ The Project
 
 ### 📁 Structure
 
-* ```include/```  The header file of the so_long project.
-* ```bin/```  Where the final executable binary file goes.
-* ```libs/```  The libraries (my own libft + minilibx, which you have to clone).
-* ```objs/``` Keeps all the .o files produced throughout the compilation process.
-* ```rscs/```  All sprites used in the game in .xpm format + some maps (for running and testing the game).
-* ```srcs/```  Where the artcode happens!<br>
+* ```libft/```  My own Libft library.
+* ```maps/```  Some maps (for running and testing the game).
+* ```mlx/```  Mlx library.
+* ```src/```  The sauce!
+* ```textures/```  All sprites used in the game in .xpm.
+
 
 ---
 <h2>
 Usage
 </h2>
 
-### Instructions
+### Prerequisites
 
-When compiling `get_next_line` or its **bonus** version, be sure to include the following flags
+**Linux and MacOS**
+This project requires the [GNU Compiler Collection](https://gcc.gnu.org/), the [GNU Make](https://www.gnu.org/software/make/) compiler, internet to clone [MiniLibX](https://github.com/42Paris/minilibx-linux#readme) in the libraryfolder and X11 Development Libraries and Headers (`sudo apt-get install libx11-dev`).
 
-```sh
-$> gcc -Wall -Wextra -Werror -D BUFFER_SIZE=xxx <files>.c.
+**Windows**
+
+You'll need to install Xserver in your machine seeing as the library runs on X-Window system. You may also use WSL on Windows 11 and run ```wsl --update``` and you should be good to go. <br>
+❗️| Make sure you have all the required tools installed on your local machine, then continue with these steps.<br>
+
+### 🛠️ Instructions
+
+**0. Download the archives**
+
+```bash
+# Clone the repository
+$ git clone git@github.com:mewmewdevart/so_long.git
+
+# Enter into the directory
+$ cd so_long/
 ```
 
-Where the `xxx` can be substituted by the number of bytes read at a time into the buffer for the `read` function. 
+**1. Run the Game**
+```bash
+# Use that command to clone the Minilibx inside the libs/ folder
+$ make call_mlx
+
+# Run the command make root directory to run the mandatory part
+$ make
+
+# This command compiles the executable file 'so_long' and runs it along with any map
+# of your choice (or a custom one) located in the directory 'rscs/maps'.
+#	To execute it, run the following command:
+$ ./bin/so_long ./rscs/maps/valids/map_valid_rectangle.ber
+# If you want to run the bonus part, run the 'make bonus' command in your directory
+#	and provide the correct path to the files starting with ./bin/so_long bonus
+```
+**2. How to play**
+- Control the player using the arrow keys (up, down, left, and right) or the letter keys (w, a, s, and d).
+- Press the 'R' key on your keyboard to reset the current level.
+- Press the [ESC] key or Click in the 'X' window to exit the game.
+
+<p align="center">
+  
+</p>
