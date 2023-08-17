@@ -25,13 +25,12 @@ Mandatory
 
 <h3 align=center>
 
----
 
 <h2>
-The project
+The Project
 </h2>
 
-### Map Rules
+### 🗺️ Map Rules
 
 <b>Map Requisites:</b>
 - Only ``P`` *(Character)*, ``1`` *(wall)*, ``0`` *(empty)*, ``C`` *(collectible)*, and ``E`` *(exit)* will be accepted characters in our map (except if you add enemies as bonus)
@@ -56,7 +55,14 @@ The project
 - Create a rectangular or square map, knowing that the map must be surrounded by '1's (walls) and must contain only one 'P' (player's starting point), one 'E' (exit), and multiple 'C's (collectibles). To test all the game features and have a better gaming experience, create a good level design using other game objects such as '0' for empty spaces (where the player can move).
 - After creating the map, you can run it by passing the path where the map was created:
 
+### 📁 Structure
 
+* ```include/```  The header file of the so_long project.
+* ```bin/```  Where the final executable binary file goes.
+* ```libs/```  The libraries (my own libft + minilibx, which you have to clone).
+* ```objs/``` Keeps all the .o files produced throughout the compilation process.
+* ```rscs/```  All sprites used in the game in .xpm format + some maps (for running and testing the game).
+* ```srcs/```  Where the artcode happens!<br>
 
 ---
 <h2>
