@@ -1,16 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fill_map.c                                         :+:      :+:    :+:   */
+/*   put_sprite.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:49:04 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/05/02 16:46:40 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/11/06 19:45:47 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	*showing(t_sizes *s, char *image)
+{
+	void	*img;
+	int		img_size;
+
+	img = mlx_xpm_file_to_image(s->mlx_ptr, image, &img_size, &img_size);
+	return (img);
+}
+
+void	*put_sprite(t_sizes *s, int x, int y)
+{
+	if (s->map[x][y] == '1')
+		return (showing(s, "files/textures/wall.xpm"));
+	else if (s->map[x][y] == '0')
+		return (showing(s, "files/textures/floor.xpm"));
+	else if (s->map[x][y] == 'C')
+		return (showing(s, "files/textures/collectable.xpm"));
+	else if (s->map[x][y] == 'E')
+		return (showing(s, "files/textures/exit.xpm"));
+	else if (s->map[x][y] == 'P')
+		return (showing(s, "files/textures/hero.xpm"));
+	else
+		return (0);
+}
 
 void	mapping(t_sizes *s)
 {
@@ -37,29 +62,4 @@ void	mapping(t_sizes *s)
 		i.h += IMG_SIZE;
 		i.x++;
 	}
-}
-
-void	*put_sprite(t_sizes *s, int x, int y)
-{
-	if (s->map[x][y] == '1')
-		return (showing(s, "textures/wall.xpm"));
-	else if (s->map[x][y] == '0')
-		return (showing(s, "textures/floor.xpm"));
-	else if (s->map[x][y] == 'C')
-		return (showing(s, "textures/collectable.xpm"));
-	else if (s->map[x][y] == 'E')
-		return (showing(s, "textures/exit.xpm"));
-	else if (s->map[x][y] == 'P')
-		return (showing(s, "textures/hero.xpm"));
-	else
-		return (0);
-}
-
-void	*showing(t_sizes *s, char *image)
-{
-	void	*img;
-	int		img_size;
-
-	img = mlx_xpm_file_to_image(s->mlx_ptr, image, &img_size, &img_size);
-	return (img);
 }

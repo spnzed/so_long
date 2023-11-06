@@ -1,23 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move.c                                             :+:      :+:    :+:   */
+/*   move_hero.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:51:21 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/06/24 18:01:21 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/11/06 19:27:38 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "../libft/include/ft_printf.h"
-
-int	close_it(void)
-{
-	ft_printf("Game Over !\n");
-	exit (0);
-}
+#include "../include/libft/include/ft_printf.h"
 
 void	*lets_swap(int x, int y, t_sizes *sizes)
 {
@@ -95,6 +89,12 @@ int	lets_move(int keycap, t_sizes *sizes)
 	else
 		return (0);
 	return (0);
+}
+
+int	close_it(void)
+{
+	ft_printf("Game Over !\n");
+	exit (0);
 }
 
 int	check_esc(int keycap, t_sizes *sizes)

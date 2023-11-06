@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_ev.c                                         :+:      :+:    :+:   */
+/*   checkprepare.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:35:58 by aaespino          #+#    #+#             */
-/*   Updated: 2023/05/04 16:39:37 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/11/06 19:24:15 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "../libft/include/ft_printf.h"
+#include "../include/libft/include/ft_printf.h"
 
-void	check_ev_arg(int argc, char **argv)
+void	check_arg(int argc, char **argv)
 {
 	if (argc != 2)
 		check_arguments(argc);
 	check_extension(argv[1]);
 }
 
-void	check_ev_ber(t_sizes sizes)
+void	prepare_sizes(t_sizes *sizes, char **argv)
+{
+	sizes->moves = 0;
+	sizes->len = read_len(argv[1]);
+	sizes->map = read_map(argv[1]);
+	sizes->map_aux = read_map(argv[1]);
+}
+
+void	check_ber(t_sizes sizes)
 {
 	check_ber_walls(&sizes);
 	check_ber_chars(&sizes);
@@ -36,14 +44,6 @@ void	check_ev_ber(t_sizes sizes)
 		}
 		exit (0);
 	}
-}
-
-void	prepare_sizes(t_sizes *sizes, char **argv)
-{
-	sizes->moves = 0;
-	sizes->len = read_len(argv[1]);
-	sizes->map = read_map(argv[1]);
-	sizes->map_aux = read_map(argv[1]);
 }
 
 void	prepare_2_print(t_sizes *sizes)

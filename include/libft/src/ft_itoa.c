@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 12:25:57 by aaespino          #+#    #+#             */
-/*   Updated: 2022/02/05 18:44:02 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/11/06 19:52:57 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char	*is_negative(int n, char *str)
 	i = countdigit(n);
 	str[0] = '-';
 	while (i > 0)
-	{	
+	{
 		str[i] = (n % 10) + 48;
 		n = (n / 10);
 		i--;

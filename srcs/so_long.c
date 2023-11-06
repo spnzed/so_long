@@ -6,13 +6,13 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/16 12:36:37 by aaespino          #+#    #+#             */
-/*   Updated: 2023/05/04 17:07:49 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/11/06 19:24:28 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	init_sizes(t_sizes *aux)
+static void	init_sizes(t_sizes *aux)
 {
 	t_sizes	sizes;
 
@@ -36,9 +36,9 @@ int	main(int argc, char **argv)
 	t_sizes	sizes;
 
 	init_sizes(&sizes);
-	check_ev_arg(argc, argv);
+	check_arg(argc, argv);
 	prepare_sizes(&sizes, argv);
-	check_ev_ber(sizes);
+	check_ber(sizes);
 	prepare_2_print(&sizes);
 	mlx_hook(sizes.win, 2, 0, check_esc, &sizes);
 	mlx_hook(sizes.win, 17, 0, close_it, &sizes);

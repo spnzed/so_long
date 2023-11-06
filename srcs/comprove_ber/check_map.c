@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   comprove.c                                         :+:      :+:    :+:   */
+/*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/26 20:45:28 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/05/04 16:28:19 by aaespino         ###   ########.fr       */
+/*   Created: 2023/11/06 18:07:29 by aaespino          #+#    #+#             */
+/*   Updated: 2023/11/06 18:44:50 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "../libft/include/ft_printf.h"
+#include "../include/libft/include/ft_printf.h"
 
 void	check_ber_walls(t_sizes *sizes)
 {
@@ -114,25 +114,4 @@ void	check_ber_elem(t_sizes *sizes)
 		ft_printf("Error\nInvalid elements\n");
 		exit (0);
 	}
-}
-
-int	check_way(t_sizes *sizes)
-{
-	int		is_possible;
-	int		aux_coins;
-	int		x;
-	int		y;
-
-	aux_coins = sizes->coins;
-	found_hero(sizes);
-	x = sizes->hx;
-	y = sizes->hy;
-	check_path(sizes, x, y);
-	is_possible = 1;
-	if (sizes->coins != 0 || sizes->exit != 0 || sizes->position != 0)
-		is_possible = 0;
-	sizes->coins = aux_coins;
-	sizes->exit = 1;
-	sizes->position = 1;
-	return (is_possible);
 }

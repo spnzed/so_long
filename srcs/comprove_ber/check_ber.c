@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read.c                                             :+:      :+:    :+:   */
+/*   check_ber.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aaronespinosa <aaronespinosa@student.42    +#+  +:+       +#+        */
+/*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:44:10 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/05/27 12:17:56 by aaronespino      ###   ########.fr       */
+/*   Updated: 2023/11/06 19:37:13 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "../libft/include/ft_printf.h"
+#include "../include/libft/include/ft_printf.h"
 
 void	check_arguments(int argc)
 {
@@ -68,28 +68,4 @@ char	**read_map(char *map)
 	res = ft_split(buff, '\n');
 	free(buff);
 	return (res);
-}
-
-void	check_path(t_sizes *sizes, int x, int y)
-{
-	if (sizes->map_aux[x][y] == 'C')
-		sizes->coins--;
-	if (sizes->map_aux[x][y] == 'P')
-		sizes->position--;
-	if (sizes->map_aux[x][y] == 'E')
-	{
-		sizes->exit--;
-		sizes->map_aux[x][y] = '1';
-		return ;
-	}
-	if (sizes->map_aux[x][y] != '1')
-	{
-		sizes->map_aux[x][y] = '1';
-	}
-	else
-		return ;
-	check_path(sizes, x + 1, y);
-	check_path(sizes, x, y + 1);
-	check_path(sizes, x - 1, y);
-	check_path(sizes, x, y - 1);
 }
