@@ -6,12 +6,12 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:35:58 by aaespino          #+#    #+#             */
-/*   Updated: 2023/11/06 19:24:15 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:44:38 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "../include/libft/include/ft_printf.h"
+#include "ft_printf.h"
 
 void	check_arg(int argc, char **argv)
 {

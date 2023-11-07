@@ -6,12 +6,12 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:51:21 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/11/06 19:27:38 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:44:47 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "../include/libft/include/ft_printf.h"
+#include "ft_printf.h"
 
 void	*lets_swap(int x, int y, t_sizes *sizes)
 {

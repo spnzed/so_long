@@ -6,12 +6,12 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 18:07:29 by aaespino          #+#    #+#             */
-/*   Updated: 2023/11/06 18:44:50 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:45:00 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include "../include/libft/include/ft_printf.h"
+#include "ft_printf.h"
 
 void	check_ber_walls(t_sizes *sizes)
 {
