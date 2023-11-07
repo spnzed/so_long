@@ -25,7 +25,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-RM = rm -f
+RM = rm -rf
 
 $(NAME): $(OBJ_LIBFT_DIR) $(OBJ_FTPRINTF_DIR) $(OBJS)
 	@ar rc $@ $(OBJS)
@@ -44,8 +44,8 @@ $(OBJ_FTPRINTF_DIR)%.o:	$(SRC_FTPRINTF_DIR)%.c
 all: $(NAME)
 
 clean: 
-	$(RM) $(OBJS)
-
+	$(RM) $(OBJ_LIBFT_DIR)
+	$(RM) $(OBJ_FTPRINTF_DIR)
 fclean:	clean
 	$(RM) $(NAME)
 
