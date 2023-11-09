@@ -1,34 +1,36 @@
-NAME 	= so_long
+NAME		=	so_long
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra
 
-SRC = 	srcs/comprove_ber/check_ber.c \
-		srcs/comprove_ber/check_map.c \
-		srcs/comprove_ber/check_way.c \
-		srcs/comprove_ber/coins_exits.c \
-		srcs/game_engine/checkprepare.c \
-		srcs/game_engine/move_hero.c \
-		srcs/graphics_module/map_to_screen.c \
-		srcs/graphics_module/put_sprite.c \
-		srcs/graphics_module/refresh_sprite.c \
-		srcs/so_long.c \
+SRC 		=	srcs/comprove_ber/check_ber.c \
+				srcs/comprove_ber/check_map.c \
+				srcs/comprove_ber/check_way.c \
+				srcs/comprove_ber/coins_exits.c \
+				srcs/game_engine/checkprepare.c \
+				srcs/game_engine/move_hero.c \
+				srcs/graphics_module/map_to_screen.c \
+				srcs/graphics_module/put_sprite.c \
+				srcs/graphics_module/refresh_sprite.c \
+				srcs/so_long.c \
 
 
-OBJ 	= ${SRC:.c=.o}
+OBJ			=	${SRC:.c=.o}
 
-ARCHIVES	= include/libft/libft.a include/mlx/libmlx.a
+ARCHIVES	=	include/libft/libft.a include/mlx/libmlx.a
 
-RM 		= rm -f
+DO			=	Makefile
 
-HEADER	= include/so_long.h
+RM 			=	rm -f
+
+HEADER		=	include/so_long.h
 
 all:
 	@make --no-print-directory -C include/libft
 	@make --no-print-directory -C include/mlx
 	@make --no-print-directory ${NAME}
 
-%.o: %.c	${HEADER} ${ARCHIVES}
-	gcc ${CFLAGS} -I include/ -I include/libft/include/ -Imlx -c $< -o $@
+%.o: %.c	${HEADER} ${ARCHIVES} ${DO}
+			gcc ${CFLAGS} -I include/ -I include/libft/include/ -Imlx -c $< -o $@
 
 ${NAME}:	${OBJ} ${HEADER}
 			gcc ${CFLAGS} -I include/ -I include/libft/include/ -Linclude/libft/ -lft -Linclude/mlx -lmlx -framework OpenGL -framework AppKit ${ARCHIVES} ${OBJ} -o ${NAME}
@@ -47,4 +49,4 @@ re:			fclean all
 test: re
 			./so_long map.ber
 
-.PHONY:		all clean fclean re test
+.PHONY:		all clean fclean re test make
