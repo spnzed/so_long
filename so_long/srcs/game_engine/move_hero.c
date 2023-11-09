@@ -6,7 +6,7 @@
 /*   By: aaespino <aaespino@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/26 20:51:21 by aaronespino       #+#    #+#             */
-/*   Updated: 2023/11/07 15:44:47 by aaespino         ###   ########.fr       */
+/*   Updated: 2023/11/09 14:41:49 by aaespino         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	*lets_swap(int x, int y, t_sizes *sizes)
 	if (sizes->map[sizes->hx + x][sizes->hy + y] == 'C')
 		sizes->coins--;
 	if (sizes->map[sizes->hx + x][sizes->hy + y] == 'E' && sizes->coins == 0)
+	{
+		ft_printf("Moves:%d\r", sizes->moves + 1);
 		close_it();
+	}
 	if (sizes->map[sizes->hx + x][sizes->hy + y] == 'E' && sizes->coins > 0)
 	{
 		mapping(sizes);
@@ -34,7 +37,7 @@ void	*lets_swap(int x, int y, t_sizes *sizes)
 	sizes->spr = save_spr(sizes);
 	free(aux);
 	sizes->moves++;
-	ft_printf("Moves:%d\n", sizes->moves);
+	ft_printf("Moves:%d\r", sizes->moves);
 	mapping(sizes);
 	return (0);
 }
@@ -93,7 +96,7 @@ int	lets_move(int keycap, t_sizes *sizes)
 
 int	close_it(void)
 {
-	ft_printf("Game Over !\n");
+	ft_printf("\nGame Over !\n");
 	exit (0);
 }
 
