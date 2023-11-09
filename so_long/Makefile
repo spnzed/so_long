@@ -1,6 +1,6 @@
 NAME		=	so_long
 
-CFLAGS		=	-Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra -MMD
 
 SRC 		=	srcs/comprove_ber/check_ber.c \
 				srcs/comprove_ber/check_map.c \
@@ -15,6 +15,7 @@ SRC 		=	srcs/comprove_ber/check_ber.c \
 
 
 OBJ			=	${SRC:.c=.o}
+DEPS		=	${SRC:.c=.d}
 
 ARCHIVES	=	include/libft/libft.a include/mlx/libmlx.a
 
@@ -24,19 +25,21 @@ RM 			=	rm -f
 
 HEADER		=	include/so_long.h
 
+INCLUDE		=	-I include/ -I include/mlx/ -I include/libft/include/
+
 all:
 	@make --no-print-directory -C include/libft
 	@make --no-print-directory -C include/mlx
 	@make --no-print-directory ${NAME}
 
-%.o: %.c	${HEADER} ${ARCHIVES} ${DO}
-			gcc ${CFLAGS} -I include/ -I include/libft/include/ -Imlx -c $< -o $@
+%.o: %.c	${ARCHIVES} ${DO}
+			gcc ${CFLAGS} ${INCLUDE} -c $< -o $@
 
-${NAME}:	${OBJ} ${HEADER}
-			gcc ${CFLAGS} -I include/ -I include/libft/include/ -Linclude/libft/ -lft -Linclude/mlx -lmlx -framework OpenGL -framework AppKit ${ARCHIVES} ${OBJ} -o ${NAME}
+${NAME}:	${OBJ}
+			gcc ${CFLAGS} ${INCLUDE} -Linclude/libft/ -lft -Linclude/mlx -lmlx -framework OpenGL -framework AppKit ${OBJ} -o ${NAME}
 
 clean:
-			${RM} ${OBJ}
+			${RM} ${OBJ} ${DEPS}
 			make clean --no-print-directory -C include/libft
 			make clean --no-print-directory -C include/mlx
 
@@ -48,5 +51,7 @@ re:			fclean all
 
 test: re
 			./so_long map.ber
+
+-include $(DEPS)
 
 .PHONY:		all clean fclean re test make
